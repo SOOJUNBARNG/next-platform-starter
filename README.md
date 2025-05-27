@@ -1,41 +1,16 @@
-# Next.js on Netlify Platform Starter
+（２０２４．７．３０）
+デプロイ成功
+https://netlify-memorygame.netlify.app/
 
-[Live Demo](https://nextjs-platform-starter.netlify.app/)
+（２０２４．７．２８）
+Netlify へのデプロイにともないいくつか変更を加えました。
 
-A modern starter based on Next.js 14 (App Router), Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+（２０２４．２．２３）
+以下の Youtube ハンズオン教材を真似して書いたメモリーゲームです。
+以下のように一部内容を変更しています。  
+・画像を２種類追加した。  
+・npm run build コマンドを実行すると useEffect の依存関係のエラーが出たため第二引数を追加した。  
+・他に build の際に useCallback でラップしなければならない関数があったのでそのようにした。  
+・そうするとゲームが上手く動作しなくなったため（同じカードを２回クリックするとマッチする他の場所のカードがオープンしてしまう）、handleChoice に if 文を追加しオープン済みのカードはクリックされても何も起こらないようにした。  
 
-In this site, Netlify Core Primitives are used both implictly for running Next.js features (e.g. Route Handlers, image optimization via `next/image`, and more) and also explicitly by the user code.
-
-Implicit usage means you're using any Next.js functionality and everything "just works" when deployed - all the plumbing is done for you. Explicit usage is framework-agnostic and typically provides more features than what Next.js exposes.
-
-## Deploying to Netlify
-
-This site requires [Netlify Next Runtime v5](https://docs.netlify.com/frameworks/next-js/overview/) for full functionality. That version is now being gradually rolled out to all Netlify accounts.
-
-After deploying via the button below, please visit the **Site Overview** page for your new site to check whether it is already using the v5 runtime. If not, you'll be prompted to opt-in to to v5.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-platform-starter)
-
-## Developing Locally
-
-1. Clone this repository, then run `npm install` in its root directory.
-
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
-
-```
-npm install netlify-cli@latest -g
-```
-
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
-
-```
-netlify link
-```
-
-4. Then, run the Next.js development server via Netlify CLI:
-
-```
-netlify dev
-```
-
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
+［Build a Memory Game with React］https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm
